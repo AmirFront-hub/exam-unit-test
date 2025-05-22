@@ -1,17 +1,11 @@
-// importera här
 import { addToCart, getCartItemCount, clearCart, removeFromCart, editCart, getItem, getTotalCartValue } from "../cart.js"
 import { isCartItem } from "../validation"
 
 
 describe('Cart', () => {
 	beforeEach(() => {
-		// Denna kod körs före varje test. Det är för att rensa kundvagnen, så inte saker ligger kvar från föregående test.
 		clearCart()
 	})
-
-
-	// -------------------------------------------------- //
-	// Skriv dina testfall här
 	
 	test('addToCart lägger till en ny produkt i kundvagnen', () => {
 		const itemCountBefore = getCartItemCount()
@@ -29,14 +23,11 @@ describe('Cart', () => {
 		const itemCountAfterAdd = getCartItemCount()
 		expect(itemCountAfterAdd).toBe(1)
 
-		// hämnta ID ifrån cart producten (borde vara 2002 )
 		const cartItem = getItem(0)
 		removeFromCart(cartItem.id)
 		const itemCountAfterRemove = getCartItemCount()
 		expect(itemCountAfterRemove).toBe(0)
 	})
-
-	// -------------------------------------------------- //
 })
 
 

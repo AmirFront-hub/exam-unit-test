@@ -1,5 +1,4 @@
 import { isCartItem, isProduct } from "../validation.js"
-// Examples of a valid product and a valid cart item. You may use these when testing below.
 const exampleProduct = {
 	id: 1001,
 	name: 'Badanka',
@@ -18,8 +17,6 @@ describe('Validation', () => {
     const result = isCartItem(exampleCartObject);
     expect(result).toBe(true);
 	});
-
-	// Osäker ifall detta stämmer
 	
 	test('it returns false for invalid cart objects', () => {
     const invalidCartObject = { id: 2002, amount: 1 };
@@ -31,8 +28,6 @@ describe('Validation', () => {
     const result = isProduct(exampleProduct);
     expect(result).toBe(true);
 	});
-
-	// Osäker ifall detta stämmer
 	
 	test('it returns false for an invalid product', () => {
     const invalidProduct = { id: 1002, price: 100 };
