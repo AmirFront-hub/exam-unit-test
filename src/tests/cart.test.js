@@ -1,5 +1,6 @@
 // importera här
-import { addToCart, getCartItemCount } from "../cart"
+import { addToCart, getCartItemCount, clearCart } from "../cart.js"
+import { isCartItem } from "../validation"
 
 
 describe('Cart', () => {
@@ -11,6 +12,7 @@ describe('Cart', () => {
 
 	// -------------------------------------------------- //
 	// Skriv dina testfall här
+	
 
 	// Du får ett test att börja med
 	test('addToCart lägger till en ny produkt i kundvagnen', () => {
@@ -19,12 +21,14 @@ describe('Cart', () => {
 
 		// addToCart returnerar inget - den påverkar kundvagnen
 		// vi behöver använda getCartItemCount för att se om det har lagts till en ny produkt i kundvagnen
+		
 		addToCart(input)
 		const itemCountAfter = getCartItemCount()
-
 		expect(itemCountAfter).toBe(itemCountBefore + 1)
 	})
 
 
 	// -------------------------------------------------- //
 })
+
+
