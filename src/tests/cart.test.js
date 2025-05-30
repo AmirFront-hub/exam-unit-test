@@ -28,6 +28,16 @@ describe('Cart', () => {
 		const itemCountAfterRemove = getCartItemCount()
 		expect(itemCountAfterRemove).toBe(0)
 	})
+
+  	test("getTotalCartValue ska returnera total summan av alla produkter", () => {
+    const input1 = { id: 1008, name: "Vattenpistol", price: 40 };
+    const input2 = { id: 1005, name: "Hopprep", price: 60 };
+
+    addToCart(input1);
+    addToCart(input2);
+
+    expect(getTotalCartValue()).toBe(100);
+  	});
 })
 
 
